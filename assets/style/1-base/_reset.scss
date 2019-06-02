@@ -1,0 +1,37 @@
+.theme--light.v-toolbar{
+    background-color: $primary !important;
+}
+
+.v-toolbar__title{
+    color: #fff;
+}
+
+.container{
+    &--thumbnailMd{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+.f-11{
+    font-size: 12px;
+}
+
+.masonry-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px){
+    .sm6{
+        flex-basis: 49% !important;
+    }
+}
+
+@media (min-width: 960px){
+    .md3{
+        width: 25%;
+        padding: 1em;
+    }
+}
