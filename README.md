@@ -1,6 +1,9 @@
-# zomato
+# Sindy Nuxt Web
 
-> My beautiful Nuxt.js project
+> this website developed with nuxt js. contains 3 different web concept and API Integration.
+> 1. Zomato like based page (vuex, lazyload, swiper)
+> 2. best youtube videos (autoplay youtube videos, button share to social medias)
+> 3. IDX TV Schedule (kinda private, so you have to login first, I use Auth0 for that, then you can live stream IDX TV via MeTube.id)
 
 ## Build Setup
 
