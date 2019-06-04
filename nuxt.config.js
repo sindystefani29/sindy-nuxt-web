@@ -34,7 +34,8 @@ export default {
   */
   css: [
     '~/assets/style/app.styl',
-    '~/assets/style/app.css'
+    '~/assets/style/app.css',
+    '~/assets/style/swiper.css'
   ],
 
   /*
@@ -42,7 +43,8 @@ export default {
   */
   plugins: [
     '@/plugins/vuetify',
-    { src: '~/plugins/vue-masonry', ssr: false }
+    { src: '~/plugins/vue-masonry', ssr: false },
+    { src: '~/plugins/swiper.js', ssr: false }
   ],
 
   /*

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import thumbnailMd from '~/components/globalUI/thumbnailMd.vue'
+import thumbnailMd from '~/components/zomato/thumbnailMd.vue'
 import axios from 'axios'
 import NoSSR from 'vue-no-ssr'
 export default {

@@ -4,7 +4,7 @@
       <v-content>
         <nuxt />
       </v-content>
-    <footerMenu />
+    <!--<footerMenu />-->
   </v-app>
 </template>
 

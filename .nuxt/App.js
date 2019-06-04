@@ -5,6 +5,8 @@ import '..\\assets\\style\\app.styl'
 
 import '..\\assets\\style\\app.css'
 
+import '..\\assets\\style\\swiper.css'
+
 import _6f6c098b from '..\\layouts\\default.vue'
 
 const layouts = { "_default": _6f6c098b }

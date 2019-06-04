@@ -98,7 +98,7 @@ export default {
           to: '/schedule'
         }
       ],
-      title: "Sindy's Nuxt Web"
+      title: "Sindy's Nuxt Websites"
     }
   }
 }
