@@ -5,7 +5,11 @@
                 <div class="swiper-wrapper">
                 <div class="swiper-slide zomato--collections__swiper" v-for="(collections, index) in field" :key="index">
                     <div class="zomato--collections__image">
-                        <img :src="collections.collection.image_url" />
+                        <!--<img :src="collections.collection.image_url" />-->
+                        <appImage
+                            :lazy-src="collections.collection.image_url"
+                            :lazy-srcset="collections.collection.image_url"
+                        />
                     </div>
                     <div class="zomato--collections__content">
                         <h4 style="-webkit-box-orient: vertical">{{collections.collection.description}}</h4>
@@ -31,7 +35,11 @@
 </template>
 
 <script>
+import appImage from '~/components/zomato/appImage.vue'
 export default {
+  components: {
+    appImage
+  },
   props: {
       field: Array
   },

@@ -10,6 +10,9 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide zomato--banner__swiper" v-for="(banner, index) in bannerSlide" :key="index">
                   <img :src="banner.image" />
+                  <!--<appImage
+                            :lazy-src="banner.image"
+                        />-->
                   <div class="swiper-slide-content">
                     <h3>{{banner.name}}</h3>
                     <v-btn flat color="orange">
@@ -47,7 +50,12 @@
     <h5>Discover restaurants by type of meal</h5>
     <div class="zomato--quicksrc__box mt-3">
       <div class="zomato--quicksrc__content" v-for="(search, index) in quickSearches" :key="index">
-        <img :src="search.image" />
+        <!--<img :src="search.image" />-->
+        <appImage
+          :lazy-src="search.image"
+          :lazy-srcset="search.image"
+          backgroundColor="#fff"
+        />
         <h5>{{search.name}}</h5>
       </div>
     </div>
@@ -64,10 +72,12 @@
 
 <script>
 import collections from '~/components/zomato/collections.vue'
+import appImage from '~/components/zomato/appImage.vue'
 import axios from 'axios'
 export default {
   components: {
-    collections
+    collections,
+    appImage
   },
   data () {
       return {
