@@ -3,7 +3,6 @@
     :data-src="lazySrc"
     :data-srcset="lazySrcset"
     :style="style"
-    class="AppImage"
   >
 </template>
 
@@ -11,7 +10,6 @@
 import lozad from 'lozad';
 
 export default {
-  name: 'AppImage',
   props: {
     backgroundColor: {
       type: String,

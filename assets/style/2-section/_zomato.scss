@@ -60,9 +60,6 @@
             h1{
                 font-size: 50px;
             }
-            .v-input{
-                width: calc(100% - 50%);
-            }
         }
     }
     &--quicksrc{
@@ -124,6 +121,29 @@
                 object-fit: cover;
                 object-position: center;            
             }
+        }
+    }
+    &--searchText{
+        width: 100%;
+        position: relative;
+        .v-input, ul{
+            width: 100%;
+        }
+        .v-messages{
+            min-height: 1px;
+        }
+        .v-input__slot{
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+            padding: 5px 0;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+        }
+        li{
+            padding: 5px;
         }
     }
 }

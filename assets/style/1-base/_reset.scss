@@ -29,6 +29,10 @@
     margin: 0 auto;
 }
 
+.bg-red{
+    background-color: rgba(215, 17, 73, 0.1)
+}
+
 @media (min-width: 768px){
     .sm6{
         flex-basis: 49% !important;

@@ -41,7 +41,8 @@
       <v-flex xs12 sm6 md6 lg6 xl6 class="zomato--banner__right">
         <h1>Tired of Waiting for Your Meal?</h1>
         <h5 class="mt-4 mb-2">Zomato lets you get the food by the best chefs without waiting. Eat what you love and save your time for something cool.</h5>
-        <v-text-field placeholder="Search Restaurant" />
+        <!--<v-text-field placeholder="Search Restaurant" />-->
+        <search />
       </v-flex>
     </v-layout>
   </v-container>
@@ -73,11 +74,13 @@
 <script>
 import collections from '~/components/zomato/collections.vue'
 import appImage from '~/components/zomato/appImage.vue'
+import search from '~/components/zomato/search.vue'
 import axios from 'axios'
 export default {
   components: {
     collections,
-    appImage
+    appImage,
+    search
   },
   data () {
       return {
