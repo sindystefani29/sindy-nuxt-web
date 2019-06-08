@@ -1,20 +1,4 @@
 .zomato{
-    .v-btn {
-        padding: 0;
-        margin: 0;
-        svg{
-            margin-left: 5px;
-            transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
-        }
-        &:hover{
-            svg{
-                margin-left: 15px;
-            } 
-        }
-    }
-    .v-btn__content{
-        justify-content: start;
-    }
     &--banner{
         padding: 0 !important;
         img{
@@ -22,6 +6,22 @@
         }
         .layout{
             background-color: #fff;
+        }
+        .v-btn {
+            padding: 0;
+            margin: 0;
+            svg{
+                margin-left: 5px;
+                transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+            }
+            &:hover{
+                svg{
+                    margin-left: 15px;
+                } 
+            }
+        }
+        .v-btn__content{
+            justify-content: start;
         }
         &__swiper{
             position: relative !important;
@@ -63,6 +63,10 @@
         }
     }
     &--quicksrc{
+        a{
+            color: rgba(0,0,0,0.87);
+            text-decoration: none;
+        }
         &__box{
             display: flex;
             justify-content: space-around;
@@ -85,6 +89,22 @@
         }
     }
     &--collections{
+        .v-btn {
+            padding: 0;
+            margin: 0;
+            svg{
+                margin-left: 5px;
+                transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+            }
+            &:hover{
+                svg{
+                    margin-left: 15px;
+                } 
+            }
+        }
+        .v-btn__content{
+            justify-content: start;
+        }
         .swiper-container{
             height: auto!important;
         }
@@ -137,6 +157,7 @@
         }
         ul{
             list-style: none;
+            z-index: 1;
             padding: 5px 0;
             position: absolute;
             background-color: #fff;
@@ -144,6 +165,19 @@
         }
         li{
             padding: 5px;
+        }
+    }
+    &--sort{
+        .v-select{
+            width: 35%;
+            margin-right: 0;
+            margin-left: auto;
+        }
+        .v-input__slot{
+            margin: 0
+        }
+        .v-messages{
+            min-height: 0;
         }
     }
 }

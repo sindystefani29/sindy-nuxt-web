@@ -1,9 +1,9 @@
 export const state = () => ({
-    coba: ''
+    id_country: ''
 })
   
 export const mutations = {
     add (state, payload) {
-        state.coba = payload;
+        state.id_country = payload;
     }
 }

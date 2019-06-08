@@ -50,7 +50,11 @@
     <h2>Quick Searches</h2>
     <h5>Discover restaurants by type of meal</h5>
     <div class="zomato--quicksrc__box mt-3">
-      <div class="zomato--quicksrc__content" v-for="(search, index) in quickSearches" :key="index">
+      <nuxt-link class="zomato--quicksrc__content"
+        v-for="(search, index) in quickSearches" 
+        :key="index"
+        :to="{path: '/zomato/result', query: {keyword : '', category: search.id_categories, title: search.name}}"
+      >
         <!--<img :src="search.image" />-->
         <appImage
           :lazy-src="search.image"
@@ -58,7 +62,7 @@
           backgroundColor="#fff"
         />
         <h5>{{search.name}}</h5>
-      </div>
+      </nuxt-link>
     </div>
   </v-container>
   <v-container class="zomato--collections mt-4">
@@ -82,6 +86,7 @@ export default {
     appImage,
     search
   },
+  middleware: 'coba',
   data () {
       return {
         swiperFadeLoop: {
@@ -196,7 +201,7 @@ export default {
       }
   },
   asyncData ({ store }) {
-    return axios.get(`https://developers.zomato.com/api/v2.1/collections?city_id=74`, {headers: {'user-key': 'b35aa1fe430b85914c5cf03369d365f3'}})
+    return axios.get(`https://developers.zomato.com/api/v2.1/collections?city_id=${store.state.id_country}`, {headers: {'user-key': 'b35aa1fe430b85914c5cf03369d365f3'}})
     .then((res) => {
       return { collections: res.data.collections }
     })

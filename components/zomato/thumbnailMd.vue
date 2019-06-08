@@ -16,6 +16,18 @@
                         <span class="f-11 mb-2">{{resto.restaurant.location.address}}</span><br>
                         <span class="grey--text f-11">{{resto.restaurant.location.locality}}, {{resto.restaurant.location.city}}</span>
                     </div>
+                    <div class="container--thumbnailMd__rating mt-3">
+                      <div class="grey--text f-11">Rp{{resto.restaurant.average_cost_for_two}} for two</div>
+                      <v-rating
+                        v-model="resto.restaurant.user_rating.aggregate_rating"
+                        color="yellow darken-3"
+                        background-color="grey darken-1"
+                        empty-icon="$vuetify.icons.ratingFull"
+                        half-increments
+                        readonly
+                        hover
+                      ></v-rating>
+                    </div>
                 </v-card-title>
         
                 <v-card-actions>
@@ -34,7 +46,8 @@ export default {
     appImage
   },
   props: {
-      field: Array
+      field: Array,
+      loadMore: Boolean
   },
   data() {
     return {
@@ -44,12 +57,20 @@ export default {
   },
   mounted () {
       //this.currentFoods = this.field
-      this.allFoods = this.allFoods.concat(this.field)
+      if(this.loadMore){
+          this.allFoods = this.allFoods.concat(this.field) 
+        }else{
+          this.allFoods = this.field
+        }
   },
   watch : {
       field(){
         //this.currentFoods = this.field
-        this.allFoods = this.allFoods.concat(this.field) 
+        if(this.loadMore){
+          this.allFoods = this.allFoods.concat(this.field) 
+        }else{
+          this.allFoods = this.field
+        }
       }
   }
 }

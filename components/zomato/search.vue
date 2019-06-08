@@ -63,7 +63,7 @@ export default {
             this.txtSearch = this.temp
           }
         }else if(event.keyCode == 13){
-          alert(this.txtSearch)
+          this.$router.push({ path: '/zomato/result', query: {category: '', title: '', keyword : this.txtSearch}})
         }else{
           this.temp = this.txtSearch
           this.searchSuggestion()
@@ -77,7 +77,7 @@ export default {
     mouseDownOptions(index, restaurant, event){
       if(event.button == 0){
         this.txtSearch = `${this.$refs.search.children[index].firstChild.nodeValue}, ${this.$refs.search.children[index].children[0].childNodes[0].nodeValue}`
-        alert(this.txtSearch)
+        this.$router.push({ path: '/zomato/result', query: {category: '', title: '', keyword : this.txtSearch}})
       }
     },
     removeActiveItem(){
@@ -95,7 +95,7 @@ export default {
     searchSuggestion(){
       let _this = this
       this.counter = 0
-      axios.get(`https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city&q=${this.txtSearch}&count=5`, {headers: {'user-key': 'b35aa1fe430b85914c5cf03369d365f3'}})
+      axios.get(`https://developers.zomato.com/api/v2.1/search?entity_id=${this.$store.state.id_country}&entity_type=city&q=${this.txtSearch}&count=5`, {headers: {'user-key': 'b35aa1fe430b85914c5cf03369d365f3'}})
       .then(response => (_this.suggestion = response.data.restaurants))
       .catch(e => {
         this.error.push(e)
