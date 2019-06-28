@@ -2,9 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _4ab97134 = () => interopDefault(import('..\\pages\\zomato\\index.vue' /* webpackChunkName: "pages_zomato_index" */))
-const _2dc79eb9 = () => interopDefault(import('..\\pages\\zomato\\result.vue' /* webpackChunkName: "pages_zomato_result" */))
-const _0e7a4dac = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
+const _020e894e = () => interopDefault(import('..\\pages\\zomato\\index.vue' /* webpackChunkName: "pages_zomato_index" */))
+const _1876cc5e = () => interopDefault(import('..\\pages\\zomato\\result.vue' /* webpackChunkName: "pages_zomato_result" */))
+const _23e28312 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 Vue.use(Router)
 
@@ -82,15 +82,15 @@ export function createRouter() {
 
     routes: [{
       path: "/zomato",
-      component: _4ab97134,
+      component: _020e894e,
       name: "zomato"
     }, {
       path: "/zomato/result",
-      component: _2dc79eb9,
+      component: _1876cc5e,
       name: "zomato-result"
     }, {
       path: "/",
-      component: _0e7a4dac,
+      component: _23e28312,
       name: "index"
     }],
 

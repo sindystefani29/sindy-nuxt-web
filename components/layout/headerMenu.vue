@@ -88,14 +88,9 @@ export default {
           to: '/zomato'
         },
         {
-          icon: 'videocam',
-          title: 'Best Youtube Videos',
-          to: '/youtube'
-        },
-        {
-          icon: 'live_tv',
-          title: 'IDX TV Scheduler',
-          to: '/schedule'
+          icon: 'person_pin',
+          title: 'Pinterest',
+          to: '/pinterest'
         }
       ],
       title: "Sindy's Nuxt Websites"
