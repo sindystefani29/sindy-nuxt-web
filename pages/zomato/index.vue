@@ -6,36 +6,7 @@
     >
       <v-flex xs12 sm6 md6 lg6 xl6>
         <no-ssr>
-          <div v-swiper:mySwiper1="swiperFadeLoop" class="swiper-background">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide zomato--banner__swiper" v-for="(banner, index) in bannerSlide" :key="index">
-                  <img :src="banner.image" />
-                  <!--<appImage
-                            :lazy-src="banner.image"
-                        />-->
-                  <div class="swiper-slide-content">
-                    <h3>{{banner.name}}</h3>
-                    <v-btn flat color="orange">
-                      Explore 
-                      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24">
-                          <g fill="none" fill-rule="evenodd">
-                              <path d="M0 0h24v24H0z"/>
-                              <path fill="#ff9800" fill-rule="nonzero" d="M0 13.474v-2.948h18.246l-8.351-8.42L12 0l12 12-12 12-2.175-2.105 8.42-8.421z"/>
-                          </g>
-                      </svg>
-                    </v-btn>
-                  </div>
-                  <p>
-                    {{banner.restaurant}}<br>
-                    <v-icon>location_on</v-icon> {{banner.location.locality}}, {{banner.location.city}}
-                  </p>
-                </div>
-              </div>
-              <div class="swiper-nav">
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-              </div>
-          </div>
+          <swiper />
         </no-ssr>
       </v-flex>
       <v-flex xs12 sm6 md6 lg6 xl6 class="zomato--banner__right">
@@ -78,84 +49,19 @@
 <script>
 import collections from '~/components/zomato/collections.vue'
 import appImage from '~/components/zomato/appImage.vue'
+import swiper from '~/components/zomato/swiper.vue'
 import search from '~/components/zomato/search.vue'
 import axios from 'axios'
 export default {
   components: {
     collections,
     appImage,
-    search
+    search,
+    swiper
   },
   middleware: 'coba',
   data () {
       return {
-        swiperFadeLoop: {
-          loop: true,
-          effect: 'fade',
-          autoplay: {
-            delay: 7000,
-          },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-          }
-        },
-        bannerSlide: [
-          {image: 'https://b.zmtcdn.com/data/reviews_photos/e5c/8b2ad3f1740f2649d9537b30fb6e6e5c_1500873465.jpg?fit=around%7C700%3A700&crop=700%3A550%3B%2A%2C%2A',
-           name: 'American Food',
-           id_cuisine: '1',
-           restaurant: 'Street Steak',
-           location: {
-              locality: "Kelapa Gading",
-              city: "Jakarta"
-           }
-          },
-          {image: 'https://b.zmtcdn.com/data/pictures/chains/1/7404491/a1977099f0ede457297e1aaaa930ab43.jpg?fit=around%7C700%3A700&crop=700%3A550%3B%2A%2C%2A',
-           name: 'Arabian Food',
-           id_cuisine: '4',
-           restaurant: 'Al-Jazeerah',
-           location:{
-              locality: "Cikini",
-              city: "Jakarta"
-           }
-          },
-          {image: 'https://b.zmtcdn.com/data/pictures/chains/2/18615392/0a873501ec5f81b17a7cb6cd6249a938.jpg?fit=around%7C700%3A700&crop=700%3A550%3B%2A%2C%2A',
-           name: 'Asian Food',
-           id_cuisine: '3',
-           restaurant: 'WAKI Japanese BBQ Dining',
-           location:{
-              locality: "Thamrin",
-              city: "Jakarta"
-           }
-          },
-          {image: 'https://b.zmtcdn.com/data/reviews_photos/1ce/f546cb7d3bf5842ceb664a92949eb1ce_1522941464.jpg?fit=around%7C700%3A700&crop=700%3A550%3B%2A%2C%2A',
-           name: 'Australian Food',
-           id_cuisine: '131',
-           restaurant: 'Fish Me',
-           location:{
-              locality: "Kec. Tangerang",
-              city: "Tangerang"
-           }
-          },
-          {image: 'https://b.zmtcdn.com/data/reviews_photos/c07/ddbbb2278bac96457b02c7a574e33c07_1504522065.jpg?fit=around%7C700%3A700&crop=700%3A550%3B%2A%2C%2A',
-           name: 'French Food',
-           id_cuisine: '45',
-           restaurant: 'Le Quartier',
-           location:{
-              locality: "Senopati",
-              city: "Jakarta"
-           }
-          },
-          {image: 'https://b.zmtcdn.com/data/reviews_photos/19e/c13447c5e01f69021b4d53829c5b619e_1530292565.jpg?fit=around%7C700%3A700&crop=700%3A550%3B%2A%2C%2A',
-           name: 'Chinese Food',
-           id_cuisine: '25',
-           restaurant: 'Wing Heng Hongkong Dim Sum Shop',
-           location:{
-              locality: "Pluit",
-              city: "Jakarta"
-           }
-          }
-        ],
         quickSearches: [
           {
             id_categories: '8',
