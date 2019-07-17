@@ -7,8 +7,6 @@
 </template>
 
 <script>
-import lozad from 'lozad';
-
 export default {
   props: {
     backgroundColor: {
@@ -73,25 +71,83 @@ export default {
     },
   },
   mounted() {
-    // As soon as the <img> element triggers
-    // the `load` event, the loading state is
-    // set to `false`, which removes the apsect
-    // ratio we've applied earlier.
-    const setLoadingState = () => {
-      this.loading = false;
-    };
-    this.$el.addEventListener('load', setLoadingState);
-    // We remove the event listener as soon as
-    // the component is destroyed to prevent
-    // potential memory leaks.
-    this.$once('hook:destroyed', () => {
-      this.$el.removeEventListener('load', setLoadingState);
-    });
-
-    // We initialize Lozad.js on the root
-    // element of our component.
-    const observer = lozad(this.$el);
-    observer.observe();
+    this.doLoadImage()
   },
+  methods: {
+    doLoadImage(){
+      /*const setLoadingState = () => {
+        this.loading = false;
+      };
+      this.$el.addEventListener('load', setLoadingState);
+      this.$once('hook:destroyed', () => {
+        this.$el.removeEventListener('load', setLoadingState);
+      });*/
+
+      if ("IntersectionObserver" in window) {
+        let onIntersection = (changes) => {
+          for (const change of changes) {
+            if (typeof change.isVisible === 'undefined') {
+              // The browser doesn't support Intersection Observer v2, falling back to v1 behavior.
+              change.isVisible = true;
+            }
+            if ((this.$el.getBoundingClientRect().top <= window.innerHeight && this.$el.getBoundingClientRect().bottom >= 0) && getComputedStyle(this.$el).display !== "none" && (change.isVisible || change.isVisible == false)) {
+              let lazyImage = change.target
+              lazyImage.src = lazyImage.dataset.src
+              lazyImage.srcset = lazyImage.dataset.srcset
+              observer.unobserve(lazyImage)
+            }
+            if(typeof change.isIntersecting === 'undefined'){
+              let lazyImage = change.target
+              lazyImage.src = lazyImage.dataset.src
+              lazyImage.srcset = lazyImage.dataset.srcset
+            }
+          }
+        };
+        let observer = new IntersectionObserver(onIntersection, {
+          trackVisibility : false,
+          delay : 100
+        });
+        observer.observe(this.$el);
+      }else{
+        this.$el.src = this.$el.dataset.src
+        this.$el.srcset = this.$el.dataset.srcset
+      }
+    }
+  },
+  watch:{
+    lazySrcset(){
+      if ("IntersectionObserver" in window) {
+        this.$el.src = ''
+        this.$el.srcset = ''
+        let onIntersection = (changes) => {
+          for (const change of changes) {
+            if (typeof change.isVisible === 'undefined') {
+              // The browser doesn't support Intersection Observer v2, falling back to v1 behavior.
+              change.isVisible = true;
+            }
+            if ((this.$el.getBoundingClientRect().top <= window.innerHeight && this.$el.getBoundingClientRect().bottom >= 0) && getComputedStyle(this.$el).display !== "none" && (change.isVisible || change.isVisible == false)) {
+              let lazyImage = change.target
+              lazyImage.src = lazyImage.dataset.src
+              lazyImage.srcset = lazyImage.dataset.srcset
+              observer.unobserve(lazyImage)
+            }
+            if(typeof change.isIntersecting === 'undefined'){
+              let lazyImage = change.target
+              lazyImage.src = lazyImage.dataset.src
+              lazyImage.srcset = lazyImage.dataset.srcset
+            }
+          }
+        };
+        let observer = new IntersectionObserver(onIntersection, {
+          trackVisibility : false,
+          delay : 100
+        });
+        observer.observe(this.$el);
+      }else{
+        this.$el.src = this.$el.dataset.src
+        this.$el.srcset = this.$el.dataset.srcset
+      }
+    }
+  }
 };
 </script>
