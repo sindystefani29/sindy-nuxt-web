@@ -59,7 +59,7 @@ export default {
     search,
     swiper
   },
-  middleware: 'coba',
+  middleware: 'locationID',
   data () {
       return {
         quickSearches: [

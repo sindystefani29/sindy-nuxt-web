@@ -88,12 +88,12 @@ export default {
           to: '/zomato'
         },
         {
-          icon: 'person_pin',
-          title: 'Pinterest',
-          to: '/pinterest'
+          icon: 'security',
+          title: 'Auth0 for Nuxt',
+          to: '/auth0/login'
         }
       ],
-      title: "Sindy's Nuxt Websites"
+      title: "Nuxt Websites"
     }
   }
 }

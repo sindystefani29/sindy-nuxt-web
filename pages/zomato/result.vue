@@ -48,14 +48,12 @@
 import thumbnailMd from '~/components/zomato/thumbnailMd.vue'
 import search from '~/components/zomato/search.vue'
 import axios from 'axios'
-import NoSSR from 'vue-no-ssr'
 export default {
   components: {
     thumbnailMd,
-    'no-ssr': NoSSR,
     search
   },
-  middleware: 'coba',
+  middleware: 'locationID',
   watchQuery: true,
   data() {
     return {
