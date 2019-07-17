@@ -1,12 +1,12 @@
 <template>
-<div class="zomato">
-  <v-container fluid>
+<div class="auth0">
+  <v-container>
     <v-layout
       row
       justify-center
       align-center
     >
-      <v-flex xs12>
+      <v-flex xs12 sm6>
         login
       </v-flex>
     </v-layout>
