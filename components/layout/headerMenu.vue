@@ -90,7 +90,7 @@ export default {
         {
           icon: 'security',
           title: 'Auth0 for Nuxt',
-          to: '/auth0/login'
+          to: '/login'
         }
       ],
       title: "Nuxt Websites"
