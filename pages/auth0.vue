@@ -27,12 +27,18 @@
 
 <script>
 import axios from 'axios'
+import AuthService from "../utils/authService";
+const { login } = AuthService;
+
 export default {
   data () {
     return {
       username: '',
       password: ''
     }
+  },
+  mounted () {
+    login()
   }
 }
 </script>
