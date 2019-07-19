@@ -318,22 +318,4 @@ h5 {
 .zomato--sort .v-messages {
   min-height: 0;
 }
-
-.auth0--box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #fff;
-  padding: 2em;
-  border: 1px solid #e7e7e7;
-  border-radius: 5px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.auth0--box h3 {
-  text-align: center;
-}
 /*# sourceMappingURL=app.css.map */

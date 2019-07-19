@@ -54,21 +54,12 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/auth',
   ],
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-  },
-  auth: {
-    strategies: {
-      auth0: {
-        domain: 'dev-18di56pe.auth0.com',
-        client_id: 'Bzhlz3c6AvkNvQGZ2VKTyeGYSTNCzmyl'
-      }
-    }
   },
   /*
   ** Build configuration

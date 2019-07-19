@@ -19,15 +19,11 @@
 <script>
 import axios from 'axios'
 export default {
-  middleware: 'auth',
   data () {
     return {
       username: '',
       password: ''
     }
-  },
-  mounted(){
-    this.$auth.loginWith('auth0')
   }
 }
 </script>

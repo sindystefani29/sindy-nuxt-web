@@ -7,18 +7,7 @@
       align-center
     >
       <v-flex xs12 sm6>
-        <div class="auth0--box">
-          <h3 class="mb-2">Login</h3>
-          <v-text-field 
-            label="Username" 
-            v-model="username"
-          />
-          <v-text-field 
-            label="Password" 
-            v-model="password"
-            type="password"
-          />
-        </div>
+        <h3>Redirecting to Auth0 Login...</h3>
       </v-flex>
     </v-layout>
   </v-container>
