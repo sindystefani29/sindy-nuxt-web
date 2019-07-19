@@ -8,7 +8,7 @@
     >
       <v-flex xs12 sm6>
         <div class="auth0--box">
-          Authenticating...
+          You are logged in...
         </div>
       </v-flex>
     </v-layout>
@@ -18,19 +18,11 @@
 
 <script>
 import axios from 'axios'
-import AuthService from "../utils/authService";
-const { handleAuthentication } = AuthService;
 export default {
   data () {
     return {
       username: '',
       password: ''
-    }
-  },
-  mounted(){
-    handleAuthentication()
-    if(handleAuthentication){
-      this.$router.push({path: '/logged-in'})
     }
   }
 }
