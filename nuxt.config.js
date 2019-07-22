@@ -43,6 +43,7 @@ export default {
   */
   plugins: [
     '@/plugins/vuetify',
+    '@/plugins/firebase',
     { src: '~/plugins/vue-masonry', ssr: false },
     { src: '~/plugins/swiper.js', ssr: false }
   ],

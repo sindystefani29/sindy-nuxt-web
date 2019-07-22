@@ -91,6 +91,11 @@ export default {
           icon: 'security',
           title: 'Auth0 for Nuxt',
           to: '/auth0'
+        },
+        {
+          icon: 'touch_app',
+          title: 'Firebase for Nuxt',
+          to: '/login-firebase'
         }
       ],
       title: "Nuxt Websites"
