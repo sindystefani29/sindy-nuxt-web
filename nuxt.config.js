@@ -3,7 +3,7 @@ import pkg from './package'
 
 export default {
   mode: 'universal',
-
+  buildDir: 'functions/nuxt',
   /*
   ** Headers of the page
   */
@@ -66,6 +66,7 @@ export default {
   ** Build configuration
   */
   build: {
+    publicPath: '/',
     transpile: ['vuetify/lib'],
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {
