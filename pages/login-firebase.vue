@@ -10,6 +10,7 @@
         <div class="auth0--box">
           <v-btn outline fab @click="googleSignIn" color="#4285F4"><v-icon>fab fa-google</v-icon></v-btn>
         </div>
+        {{user}}
       </v-flex>
     </v-layout>
   </v-container>
