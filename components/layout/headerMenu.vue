@@ -96,6 +96,11 @@ export default {
           icon: 'touch_app',
           title: 'Firebase for Nuxt',
           to: '/login-firebase'
+        },
+        {
+          icon: 'chat',
+          title: 'Chat',
+          to: '/chat'
         }
       ],
       title: "Nuxt Websites"
