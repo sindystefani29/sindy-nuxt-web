@@ -23,25 +23,25 @@ import firebase from 'firebase'
 export default {
   data () {
     return {
-      result: '',
+      result: [],
       db: ''
     }
   },
   mounted(){
       this.db = firebase.firestore();
-      this.db.collection("users").get().then((querySnapshot) => {
+      this.db.collection("message").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            this.result = doc.data()
+            this.result.push(doc.data())
         });
       });
   },
   methods: {
       addCollection () {
+        let info = firebase.auth().currentUser
         this.db = firebase.firestore();
-        this.db.collection("users").add({
-            first: "Ada",
-            last: "Lovelace",
-            born: 1815
+        this.db.collection("message").add({
+            message: "kali ini punya borul",
+            user: info.email
         })
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
