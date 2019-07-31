@@ -94,8 +94,13 @@ export default {
         },
         {
           icon: 'touch_app',
-          title: 'Firebase for Nuxt',
+          title: 'Login Firebase',
           to: '/login-firebase'
+        },
+        {
+          icon: 'storage',
+          title: 'Cloud Firestore',
+          to: '/cloud-firestore'
         },
         {
           icon: 'chat',
