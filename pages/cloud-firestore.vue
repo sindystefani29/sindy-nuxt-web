@@ -8,7 +8,7 @@
     >
       <v-flex xs12 sm6>
         <div class="auth0--box">
-          <v-btn outline fab @click="addCollection" color="#4285F4"><v-icon>fab fa-google</v-icon></v-btn>
+          <v-btn outline @click="addCollection" color="#4285F4">Tambah Message</v-btn>
         </div>
         {{result}}
       </v-flex>

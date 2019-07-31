@@ -9,12 +9,13 @@ import axios from 'axios'
 import firebase from 'firebase'
 export default {
   mounted () {
-      firebase.auth().onAuthStateChanged(function(user){
+      firebase.auth().onAuthStateChanged((user) => {
         if(user){
           let info = firebase.auth().currentUser
           localStorage.setItem("email", info.email)
+          this.$router.push({path: '/chat/container'})
         }else{
-          console.log("your not login yet")
+          this.$router.push({path: '/chat/login'})
         }
       })
   }
