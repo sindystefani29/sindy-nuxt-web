@@ -318,4 +318,109 @@ h5 {
 .zomato--sort .v-messages {
   min-height: 0;
 }
+
+.chat-login .v-btn {
+  color: #fff !important;
+  margin: 0.8em auto;
+  width: 50%;
+  height: 4em;
+}
+
+.chat-login .v-btn:first-child {
+  background-color: #3b5998 !important;
+}
+
+.chat-login .v-btn:nth-child(2) {
+  background-color: #d74a37 !important;
+}
+
+.chat-login svg {
+  height: 20px;
+  width: 20px;
+}
+
+.chat-login--button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.chat-container--height {
+  height: calc(100vh - 50px);
+}
+
+.chat-container .v-card {
+  height: 100% !important;
+  overflow-y: auto;
+}
+
+.chat-container .v-input {
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.chat-container .v-input .v-input__slot, .chat-container .v-input .v-text-field__details, .chat-container .v-input .v-input {
+  margin: 0 !important;
+}
+
+.chat-container .v-input .v-messages {
+  min-height: 0;
+}
+
+.chat-container--content {
+  background-color: #f0f0f0;
+  padding: 8px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 1em;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.chat-container--sender {
+  background-color: #039be5;
+  margin-left: auto;
+  margin-right: 1em;
+  color: #fff;
+}
+
+.chat-container--box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.chat-container--mt {
+  margin-top: 5em;
+}
+
+.chat-container .v-toolbar {
+  position: fixed;
+  width: 50%;
+}
+
+.chat-container .nav-fixed {
+  bottom: 0;
+  padding: 0.5em;
+  background-color: #fff !important;
+}
+
+.chat--box {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  padding: 2em;
+}
 /*# sourceMappingURL=app.css.map */
