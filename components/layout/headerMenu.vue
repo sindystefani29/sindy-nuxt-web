@@ -88,6 +88,11 @@ export default {
           to: '/zomato'
         },
         {
+          icon: 'chat',
+          title: 'Chat',
+          to: '/chat'
+        },
+        {
           icon: 'security',
           title: 'Auth0 for Nuxt',
           to: '/auth0'
@@ -101,11 +106,6 @@ export default {
           icon: 'storage',
           title: 'Cloud Firestore',
           to: '/cloud-firestore'
-        },
-        {
-          icon: 'chat',
-          title: 'Chat',
-          to: '/chat'
         }
       ],
       title: "Nuxt Websites"

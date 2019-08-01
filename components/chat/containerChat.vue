@@ -6,6 +6,7 @@
                 flat
                 height="200px"
                 tile
+                id="getToBottom"
             >
                 <v-toolbar dense>            
                     <v-toolbar-title>Chat Me</v-toolbar-title>
@@ -33,6 +34,7 @@
                             placeholder="Enter Message"
                             solo
                             v-model="chatContent"
+                            @keyup.enter="sendMessage()"
                         >
                         </v-text-field>
                     </v-input>
@@ -66,22 +68,29 @@ export default {
     },
     mounted() {
         this.db = firebase.firestore()
-        this.db.collection("message")
+        this.db.collection("message").orderBy("timestamp")
         .onSnapshot((snapshot) => {
             snapshot.docChanges().forEach((change) => {
                 if (change.type === "added") {
                     this.result.push(change.doc.data())
+                    this.toBottom()
                 }
             })
         })
     },
     methods: {
+        toBottom(){
+            let a = document.getElementById('getToBottom')
+            let b = a.scrollHeight + 200
+            a.scrollTo(0, b)
+        },
         sendMessage() {
             let info = firebase.auth().currentUser
             this.db = firebase.firestore();
             this.db.collection("message").add({
                 message: this.chatContent,
-                user: info.email
+                user: info.email,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
             })
             .then((docRef) => {
                 console.log("Document written with ID: ", docRef.id);
@@ -90,6 +99,7 @@ export default {
                 console.error("Error adding document: ", error);
             });
             this.chatContent = ''
+            this.toBottom()
         },
         logout () {
             firebase.auth().signOut().then(result => {
