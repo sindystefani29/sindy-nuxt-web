@@ -1,14 +1,7 @@
 <template>
     <div class="chat-container">
         <v-flex xs12 sm6 class="ma-auto chat-container--height">
-            <v-card
-                color="white lighten-4"
-                flat
-                height="200px"
-                tile
-                id="getToBottom"
-            >
-                <v-toolbar dense>            
+            <v-toolbar dense>            
                     <v-toolbar-title>Chat Me</v-toolbar-title>
             
                     <v-spacer></v-spacer>
@@ -17,14 +10,22 @@
                         <v-icon>logout</v-icon>
                     </v-btn>
                 </v-toolbar>
-                <div class="chat-container--mt">
+            <v-card
+                color="white lighten-4"
+                flat
+                height="200px"
+                tile
+                id="getToBottom"
+            >
+                <div>
                     <div class="chat-container--box mt-2 mb-2" v-for="(chat, index) in result" :key="index">
                         <div class="chat-container--content" :class="{'chat-container--sender': getEmail == chat.user}">
                             {{chat.message}}
                         </div>
                     </div>
                 </div>
-                <v-toolbar class="nav-fixed">            
+            </v-card>
+            <v-toolbar class="nav-fixed">            
                     <v-input
                         append-icon="send"
                         @click:append="sendMessage()"
@@ -39,7 +40,6 @@
                         </v-text-field>
                     </v-input>
                 </v-toolbar>
-            </v-card>
         </v-flex>
     </div>
 </template>
@@ -73,15 +73,15 @@ export default {
             snapshot.docChanges().forEach((change) => {
                 if (change.type === "added") {
                     this.result.push(change.doc.data())
-                    this.toBottom()
                 }
+                this.toBottom()
             })
         })
     },
     methods: {
         toBottom(){
             let a = document.getElementById('getToBottom')
-            let b = a.scrollHeight + 200
+            let b = a.scrollHeight
             a.scrollTo(0, b)
         },
         sendMessage() {
@@ -93,13 +93,12 @@ export default {
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
             })
             .then((docRef) => {
-                console.log("Document written with ID: ", docRef.id);
+                this.toBottom()
             })
             .catch(function(error) {
                 console.error("Error adding document: ", error);
             });
             this.chatContent = ''
-            this.toBottom()
         },
         logout () {
             firebase.auth().signOut().then(result => {

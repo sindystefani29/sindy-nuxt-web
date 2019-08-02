@@ -351,10 +351,11 @@ h5 {
 
 .chat-container--height {
   height: calc(100vh - 50px);
+  padding-top: 50px;
 }
 
 .chat-container .v-card {
-  height: 100% !important;
+  height: calc(100% - 60px) !important;
   overflow-y: auto;
 }
 
@@ -384,6 +385,7 @@ h5 {
       align-self: flex-start;
   margin-left: 1em;
   border-radius: 10px;
+  max-width: 250px;
   -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
           box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
@@ -401,14 +403,14 @@ h5 {
   display: flex;
 }
 
-.chat-container--mt {
-  margin-top: 5em;
-  margin-bottom: 7em;
-}
-
 .chat-container .v-toolbar {
   position: fixed;
   width: 50%;
+}
+
+.chat-container .v-toolbar:first-child {
+  top: 48px;
+  z-index: 1;
 }
 
 .chat-container .nav-fixed {
