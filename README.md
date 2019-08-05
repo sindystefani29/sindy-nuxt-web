@@ -1,8 +1,9 @@
 # Sindy Nuxt Web
 
 > this website developed with nuxt js. contains 3 different web concept and API Integration.
-> 1. Zomato like based page (vuex, lazyload, swiper)
-> 2. Dashboard zomato admin (auth0)
+> 1. Zomato like based page (vuex, lazyload, swiper, masonry)
+> 2. Login Auth (using Firebase Authentication and Auth0)
+> 3. real time chat using cloud firestore from firebase
 
 ## Build Setup
 
