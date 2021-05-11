@@ -21,7 +21,7 @@
     "firebase": "^6.3.2",
     "firebase-admin": "^8.0.0",
     "firebase-functions": "^3.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "lodash.template": "^4.5.0",
     "nuxt": "^2.8.1",
     "vue-awesome-swiper": "^3.1.3",
